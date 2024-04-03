@@ -30,7 +30,7 @@ _17:00 to 18:15 Tuesdays and Thursdays in TD-W 1701_
 
 | Date       | Topics
 |------------|--------
-| April  2nd | ???
+| April  2nd | Class intro; the syllabus; Git intro
 
 
 [piazza]: https://piazza.com/ucsb/spring2024/cs24
