@@ -21,7 +21,7 @@ _Assignments are due before midnight Pacific Time._
 
 | Name                    | Due
 |-------------------------|-----
-| Welcome                 | April 8th
+| [Welcome](labs/welcome) | April 8th
 
 
 ## Lectures
