@@ -22,6 +22,7 @@ _Assignments are due before midnight Pacific Time._
 | Name                    | Due
 |-------------------------|-----
 | [Welcome](labs/welcome) | April 8th
+| [FibVec](labs/fibvec)   | April 15th
 
 
 ## Lectures
