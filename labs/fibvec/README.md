@@ -26,7 +26,7 @@ The first few Fibonacci numbers are: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ..
 ## Your Assignment
 
 - Implement a vector that stores a sequence of `int`s.
-- You can't use any container types from the standard library.
+- You can't use any [container classes][containers] from the standard library.
 - Make sure your final code doesn't print anything.
 - Make sure you don't have any memory leaks.
 
@@ -85,3 +85,6 @@ represented as `size_t`s. If a function doesn't modify your vector, mark it as a
 - Include `cstddef` in `FibVec.h` to get the `size_t` type.  Include `stdexcept`
   in `FibVec.cpp` to get the exception types.
 - Note that `size_t` is an unsigned integer type.  Don't subtract from zero!
+
+
+[containers]: https://cplusplus.com/reference/stl/
