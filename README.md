@@ -34,6 +34,8 @@ _17:00 to 18:15 Tuesdays and Thursdays in TD-W 1701_
 | April  2nd | Class intro; the syllabus; Git intro
 | April  4th | More Git; abstract and concrete data structures; sequences and vectors
 | April  9th | Sequences, vectors, and linked lists; runtime; big-O notation
+| April 11th | More sequences; stacks and queues; big-O notation
+| April 16th | More stacks and queues; doubly-linked lists; amortized runtime
 
 
 [piazza]: https://piazza.com/ucsb/spring2024/cs24
