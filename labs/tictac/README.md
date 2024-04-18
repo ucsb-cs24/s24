@@ -37,11 +37,11 @@ Run `git pull upstream master` in your Git repo to get the starter code.
 
 ## Your Assignment
 
-- Implement the move parser in `check-move.cpp`. A possible `main()` function is
+- Implement the move parser in `move-check.cpp`. A possible `main()` function is
   written for you,  but you'll need to implement the  `Move` helper functions in
   `Move.cpp` to make it work.
-- Implement the game evaluator in `check-game.cpp`.  Writing a `Board` class to
-  manage your game state is recommended;  `Board.h` and `Board.cpp` files are
+- Implement the  game evaluator in `game-check.cpp`.  Writing a `Board` class to
+  manage  your game state  is recommended;  `Board.h` and `Board.cpp`  files are
   provided to make this easier.
 - Test your code locally!  Only the basic tests are visible on Gradescope; to
   earn full credit, think of and deal with all the corner cases.
