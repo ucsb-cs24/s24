@@ -122,10 +122,11 @@ text may or may not end with a newline.
 
 ## Hints
 
-- All of the test input is ASCII text.
 - The expected output is always one line of text followed by a newline.
 - A `std::istringstream` from the `sstream` header may be helpful when parsing
   moves.
+- Don't stop evaluating moves when someone wins!  If there are further moves,
+  the game is invalid, and you'll need to report that.
 - Use `Ctrl+D` on Linux and Mac (or `Ctrl+Z` then `Enter` on Windows) to send an
   "end of input" to your evaluator when testing manually.
 - Save your test cases in text files so you don't have to type them every time!
