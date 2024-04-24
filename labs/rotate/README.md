@@ -28,9 +28,10 @@ printing format are explained in the following sections.
 - `clear()` removes all items from the tree.
 - `count()` reports the number of items in the tree.
 - `contains()` reports whether or not a given item exists in the tree.
-- `find()` returns the index of an item.  If there are multiple copies of the
-  item, it returns the smallest index.  If the item is not present in the tree,
-  it returns the maximum value that can be stored in a `size_t`.
+- `find()` returns the first index of an item  in the sorted sequence.  If there
+  are multiple copies of the item, it returns the smallest index. If the item is
+  not present in the tree,  it returns the maximum value that can be stored in a
+  `size_t`.
 - `insert()` adds an item to the tree as a leaf node.  If that item is already
   present in the tree, you will encounter it on your way down to a leaf node; if
   this happens, insert the new item into the old item's left subtree.
@@ -157,6 +158,9 @@ More formally:
 
 - Recursion works very, very nicely with trees.
 - You may need to perform multiple promotions after a single insert or remove.
+- The index  of an item  in the sorted sequence  is the same as  its index in an
+  in-order traversal of the tree.  As a corollary, the index of the root item is
+  the weight of its left subtree.
 - You  may want to store  subtree weights  on each node.  This will make indexed
   operations faster, but you'll have to keep these weights up to date.
 - The autograder  will use your `insert()`, `print()` , and `count()`  functions
