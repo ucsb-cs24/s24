@@ -55,6 +55,11 @@ an insert,  this is the child that was recursed into;  in a remove,  this is the
 other child). If the child exists, and if promoting it would improve the balance
 of the subtree, perform the promotion.
 
+Note  that when the  target of a  `remove()` has  two children,  it's actually a
+different node  that gets removed:  the smallest node in the target node's right
+subtree.  Call this node `n`, as above.  When considering promotions, you should
+start at `n`'s parent, not the parent of the original target.
+
 
 ## Promotions
 
