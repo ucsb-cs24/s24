@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Tree Viewer</title>
+    <style type="text/css">
+      body {
+        height:  100%;
+        width:   100%;
+        margin:  0;
+        padding: 0;
+
+        background-color: #eee;
+      }
+
+      #top {
+        position: fixed;
+
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 50%;
+      }
+
+      #bottom {
+        position: fixed;
+
+        top: 50%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+
+      .header {
+        position: absolute;
+        display: block;
+
+        top: 4pt;
+        left: 4pt;
+        right: 4pt;
+        height: 20pt;
+      }
+
+      input {
+        box-sizing: border-box;
+        height: 100%;
+        width:  100%;
+      }
+
+      .wrapper {
+        background-color: #fff;
+        position: absolute;
+
+        top: 28pt;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    </style>
+    <script type="text/javascript">
+      class Node {
+        constructor(left, data, right) {
+          this.left  = left
+          this.data  = data
+          this.right = right
+        }
+      }
+
+      class Stream {
+        constructor(text) {
+          this.text  = text
+          this.index = 0
+        }
+
+        take(char) {
+          if(this.text[this.index] === char) {
+            this.index += 1
+            return true
+          }
+        }
+
+        takeWord() {
+          let space = this.text.indexOf(' ', this.index)
+          let paren = this.text.indexOf(')', this.index)
+          let next  = Math.min(space, paren)
+
+          if(space === -1) next = paren
+          if(paren === -1) next = space
+
+          if(next !== -1) {
+            let text = this.text.slice(this.index, next)
+            this.index = next
+            return text
+          }
+        }
+
+        require(char) {
+          if(!this.take(char)) {
+            throw 'Missing required ' + char
+          }
+        }
+      }
+
+      function parse_data(stream) {
+        if(stream.take('-')) {
+          throw 'Unexpected hyphen.'
+        }
+        if(stream.take('(')) {
+          throw 'Unexpected opening parenthesis.'
+        }
+        if(stream.take(')')) {
+          throw 'Unexpected closing parenthesis.'
+        }
+
+        return stream.takeWord()
+      }
+
+      function parse_tree(stream) {
+        if(stream.take('-')) {
+          return null
+        }
+        if(stream.take('(')) {
+          let left = parse_tree(stream)
+          stream.require(' ')
+
+          let data = parse_data(stream)
+          stream.require(' ')
+
+          let right = parse_tree(stream)
+          stream.require(')')
+
+          return new Node(left, data, right)
+        }
+        else {
+          let data = parse_data(stream)
+          return new Node(null, data, null)
+        }
+      }
+
+      function splat_node(array, node, index) {
+        if(node) {
+          array[index] = node
+          splat_node(array, node.left,  2*index + 1)
+          splat_node(array, node.right, 2*index + 2)
+        }
+      }
+
+      function splat_tree(tree) {
+        array = []
+        splat_node(array, tree, 0)
+        return array
+      }
+
+      function center(width, row, x) {
+        let bins = Math.pow(2, row)
+        let binw = width / bins
+
+        return (x + 0.5) * binw
+      }
+
+      function color(node1, node2, src) {
+        if(node1 && node2) {
+          if(node1.data === node2.data) {
+            return '#eee'
+          }
+          else {
+            return '#ddf'
+          }
+        }
+        else if(src) {
+          return '#fdd'
+        }
+        else {
+          return '#dfd'
+        }
+      }
+
+      function draw_links(splat, canvas) {
+        const context = canvas.getContext('2d')
+
+        let base = 1 // starting index into the splat
+        let step = 2 // possible nodes in this row
+        let row  = 1 // row number
+
+        while(base < splat.length) {
+          for(var i = 0; i < step; ++i) {
+            let node = splat[base + i]
+            if(!node) continue
+
+            let px = center(canvas.width, row - 1, i >> 1)
+            let cx = center(canvas.width, row, i)
+
+            context.beginPath()
+            context.moveTo(px, 15 + 30 * (row - 1))
+            context.lineTo(cx, 15 + 30 * row)
+            context.stroke()
+          }
+
+          base += step
+          step *= 2
+          row  += 1
+        }
+      }
+
+      function draw_tree(splat, canvas, other, src) {
+        const context = canvas.getContext('2d')
+        context.font = '12px sans-serif'
+        context.textAlign = 'center'
+
+        let base = 0 // starting index into the splat
+        let step = 1 // possible nodes in this row
+        let row  = 0 // row number
+
+        while(base < splat.length) {
+          for(var i = 0; i < step; ++i) {
+            let node = splat[base + i]
+            if(!node) continue
+
+            let w2 = 30
+            let cx = center(canvas.width, row, i)
+
+            context.fillStyle = (other.length)? color(node, other[base + i], src) : '#eee'
+            context.fillRect(cx - w2, 30 * row + 5, 2*w2, 20)
+
+            context.fillStyle = '#000'
+            context.fillText(node.data, cx, 30 * row + 20, 2 * w2)
+          }
+
+          base += step
+          step *= 2
+          row  += 1
+        }
+      }
+
+      function draw(splat, canvas, other, src) {
+        const wrapper = canvas.parentElement
+        canvas.width  = wrapper.clientWidth
+        canvas.height = wrapper.clientHeight
+
+        draw_links(splat, canvas)
+        draw_tree( splat, canvas, other, src)
+      }
+
+      function redraw() {
+        let topcanvas = document.getElementById('top-canvas')
+        let botcanvas = document.getElementById('bottom-canvas')
+
+        draw(topsplat, topcanvas, botsplat, true)
+        draw(botsplat, botcanvas, topsplat, false)
+      }
+
+    </script>
+  </head>
+  <body>
+    <div id="top">
+      <div class="header">
+        <input id="top-input" placeholder="Copy tree notation here..." />
+      </div>
+      <div class="wrapper">
+        <canvas id="top-canvas"></canvas>
+      </div>
+    </div>
+    <div id="bottom">
+      <div class="header">
+        <input id="bottom-input" placeholder="Copy more tree notation here to see a diff..." />
+      </div>
+      <div class="wrapper">
+        <canvas id="bottom-canvas"></canvas>
+      </div>
+    </div>
+    <script type="text/javascript">
+      function parse(input) {
+        if(input.value === '') {
+          return []
+        }
+
+        try {
+          let stream = new Stream(input.value.trim())
+          return splat_tree(parse_tree(stream))
+        }
+        catch(error) {
+          return []
+        }
+      }
+
+      const topinput = document.getElementById('top-input')
+      const botinput = document.getElementById('bottom-input')
+      let   topsplat = []
+      let   botsplat = []
+
+      topinput.addEventListener('change', event => {
+        topsplat = parse(event.target)
+        redraw()
+      })
+
+      botinput.addEventListener('change', event => {
+        botsplat = parse(event.target)
+        redraw()
+      })
+
+      topsplat = parse(topinput)
+      botsplat = parse(botinput)
+      redraw()
+    </script>
+  </body>
+</html>

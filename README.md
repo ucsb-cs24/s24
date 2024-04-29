@@ -38,9 +38,9 @@ _17:00 to 18:15 on Tuesdays and Thursdays in TD-W 1701_
 | April  9th | Sequences, vectors, and linked lists; runtime; big-O notation
 | April 11th | More sequences; stacks and queues; big-O notation
 | April 16th | More stacks and queues; doubly-linked lists; amortized runtime
-| April 18th | exceptions; try and catch; sorted sequences; binary search
-| April 23rd | more binary search; binary search trees; simple tree rotations
-
+| April 18th | Exceptions; try and catch; sorted sequences; binary search
+| April 23rd | More binary search; binary search trees; simple tree rotations
+| April 25th | More tree rotations; AVL trees; lab tree walkthrough
 
 [piazza]: https://piazza.com/ucsb/spring2024/cs24
 [class-links]: https://piazza.com/class/lug49t2pdob1ub/post/6
