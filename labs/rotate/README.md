@@ -177,6 +177,10 @@ reach `c`, considering promotions.
 ## Hints
 
 - Recursion works very, very nicely with trees.
+- You can pass most of the tests without implementing rotations or `remove()`; I
+  suggest you ignore these at first.  Once your other functions are working, add
+  rotations and make sure you pass all the `insert()` tests. Save `remove()` for
+  last.
 - You may need to perform multiple promotions after a single insert or remove.
 - The index  of an item  in the sorted sequence  is the same as  its index in an
   in-order traversal of the tree.  As a corollary, the index of the root item is
