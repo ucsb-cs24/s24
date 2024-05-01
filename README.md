@@ -25,6 +25,7 @@ _Assignments are due before midnight Pacific Time._
 | [FibVec](labs/fibvec)   | April 15th
 | [TicTac](labs/tictac)   | April 22nd
 | [Rotate](labs/rotate)   | May 1st
+| [Polish](labs/polish)   | May 8th
 
 
 ## Lectures
@@ -41,6 +42,7 @@ _17:00 to 18:15 on Tuesdays and Thursdays in TD-W 1701_
 | April 18th | Exceptions; try and catch; sorted sequences; binary search
 | April 23rd | More binary search; binary search trees; simple tree rotations
 | April 25th | More tree rotations; AVL trees; lab tree walkthrough
+| April 30th | Inheritance and virtual functions
 
 [piazza]: https://piazza.com/ucsb/spring2024/cs24
 [class-links]: https://piazza.com/class/lug49t2pdob1ub/post/6
