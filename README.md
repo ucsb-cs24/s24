@@ -43,6 +43,7 @@ _17:00 to 18:15 on Tuesdays and Thursdays in TD-W 1701_
 | April 23rd | More binary search; binary search trees; simple tree rotations
 | April 25th | More tree rotations; AVL trees; lab tree walkthrough
 | April 30th | Inheritance and virtual functions
+| May    2nd | Assorted binary search trees; ASTs and traversals/notations
 
 [piazza]: https://piazza.com/ucsb/spring2024/cs24
 [class-links]: https://piazza.com/class/lug49t2pdob1ub/post/6
