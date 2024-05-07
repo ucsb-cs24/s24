@@ -19,13 +19,14 @@ assignment, do that on [Gradescope][gradescope].
 
 _Assignments are due before midnight Pacific Time._
 
-| Name                    | Due
-|-------------------------|-----
-| [Welcome](labs/welcome) | April 8th
-| [FibVec](labs/fibvec)   | April 15th
-| [TicTac](labs/tictac)   | April 22nd
-| [Rotate](labs/rotate)   | May 1st
-| [Polish](labs/polish)   | May 8th
+| Name                      | Due
+|---------------------------|-----
+| [Welcome](labs/welcome)   | April 8th
+| [FibVec](labs/fibvec)     | April 15th
+| [TicTac](labs/tictac)     | April 22nd
+| [Rotate](labs/rotate)     | May 1st
+| [Polish](labs/polish)     | May 8th
+| [GenePool](labs/genepool) | May 15th
 
 
 ## Lectures
@@ -44,6 +45,8 @@ _17:00 to 18:15 on Tuesdays and Thursdays in TD-W 1701_
 | April 25th | More tree rotations; AVL trees; lab tree walkthrough
 | April 30th | Inheritance and virtual functions
 | May    2nd | Assorted binary search trees; ASTs and traversals/notations
+| May    7th | Sets and maps; iterators
+
 
 [piazza]: https://piazza.com/ucsb/spring2024/cs24
 [class-links]: https://piazza.com/class/lug49t2pdob1ub/post/6
