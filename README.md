@@ -27,6 +27,7 @@ _Assignments are due before midnight Pacific Time._
 | [Rotate](labs/rotate)     | May 1st
 | [Polish](labs/polish)     | May 8th
 | [GenePool](labs/genepool) | May 15th
+| [Counter](labs/counter)   | May 22nd
 
 
 ## Lectures
@@ -46,6 +47,8 @@ _17:00 to 18:15 on Tuesdays and Thursdays in TD-W 1701_
 | April 30th | Inheritance and virtual functions
 | May    2nd | Assorted binary search trees; ASTs and traversals/notations
 | May    7th | Sets and maps; iterators
+| May    9th | Enums; `std::istream`s; virtual destructors; virtual function implementation
+| May   14th | Hash tables; chaining vs probing
 
 
 [piazza]: https://piazza.com/ucsb/spring2024/cs24
