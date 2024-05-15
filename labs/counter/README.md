@@ -7,11 +7,15 @@ key.  This makes it perfect for a very common programming task: counting things.
 This map also  supports iterators,  and iterating over the map  should visit the
 keys in _insertion order_.  The first key added to the map will be the first key
 visited, the second the second, and so on until reaching the most recently added
-key at the very end of the iteration.
+key at the very end of the iteration.  This is a convenient feature, and lots of
+languages support it:  Ruby's default map type works like this, for example, and
+Python provides the `OrderedDict` type.
 
-Unlike a map that's ordered by key,  this map can have an (average) O(1) runtime
-for all of its functions.  It achieves this by  storing its key-value pairs in a
-doubly-linked list, and then using a hash table as an index into that list.
+Unlike maps that are ordered by key, these maps have an average O(1) runtime for
+all of their functions.  They achieve this by storing their key-value pairs in a
+doubly-linked list, and then using a hash table as an index into that list.  The
+linked list  keeps the values in order,  and the hash table lets you jump to any
+list node in constant time.
 
 The full implementation can be a bit complicated,  so I recommend using only the
 linked list at first,  then adding the hash table later.  See the Implementation
@@ -25,7 +29,7 @@ Guide section for more details.
   - An `Iterator` class that iterates over this `List`.
   - An `Index` class that allows fast lookups of `List` nodes.
   - Some `Counter` member functions to tie everything together.
-- You may not any [container classes][containers] from the standard library.
+- You may not use any [container classes][containers] from the standard library.
 - Make sure your final code doesn't print anything.
 - Make sure you don't have any memory leaks.
 - Make your code run as fast as you can.
@@ -134,6 +138,33 @@ as possible.  This is the recommended strategy for for doing that.
    - At this point, you should be able to attempt the performance tests.  If you
      don't get the performance you want,  try different hash functions, and make
      sure your hash table isn't getting too full.
+
+The  final memory layout  will look  something  like this.  This diagram  uses a
+probing  hash table for simplicity,  so each cell in `table` hold a pointer to a
+list node.
+```
+ Counter
++------------------+
+|  Index           |        0   1   2   3   4   5   6   7   8
+| +--------------+ |      +---+---+---+---+---+---+---+---+---+
+| | table      *--------->| * |   | * |   |   |   | * |   |   |
+| +--------------+ |      +--\+---+/--+---+---+---+-|-+---+---+
+| | count    = 3 | |          \   /                 |
+| +--------------+ |           \ /                  |
+| | capacity = 9 | |            X                   |
+| +--------------+ |           / \                  |
+|                  |          /   \                 |
+|  List            |         /     \                |
+| +--------------+ |        V       V               V
+| | head       *------->[one: 1]<->[two: 2]<->[three: 3]<---\
+| +--------------+ |                                        |
+| | tail       *--------------------------------------------/
+| +--------------+ |
+|                  |
+| count        = 3 |
+| total        = 6 |
++------------------+
+```
 
 
 ## Hints
