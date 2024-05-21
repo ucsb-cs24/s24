@@ -28,6 +28,7 @@ _Assignments are due before midnight Pacific Time._
 | [Polish](labs/polish)     | May 8th
 | [GenePool](labs/genepool) | May 15th
 | [Counter](labs/counter)   | May 22nd
+| [Typo](labs/typo)         | May 29th
 
 
 ## Lectures
