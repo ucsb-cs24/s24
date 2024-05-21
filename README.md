@@ -49,6 +49,8 @@ _17:00 to 18:15 on Tuesdays and Thursdays in TD-W 1701_
 | May    7th | Sets and maps; iterators
 | May    9th | Enums; `std::istream`s; virtual destructors; virtual function implementation
 | May   14th | Hash tables; chaining vs probing
+| May   16th | Hash table probing schemes; intro to functional programming: map, reduce, etc.
+| May   21st | Heaps; binary heaps; leftist heaps
 
 
 [piazza]: https://piazza.com/ucsb/spring2024/cs24
