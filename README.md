@@ -29,6 +29,7 @@ _Assignments are due before midnight Pacific Time._
 | [GenePool](labs/genepool) | May 15th
 | [Counter](labs/counter)   | May 22nd
 | [Typo](labs/typo)         | May 29th
+| [VoxHop](labs/voxhop)     | June 14th
 
 
 ## Lectures
@@ -52,6 +53,8 @@ _17:00 to 18:15 on Tuesdays and Thursdays in TD-W 1701_
 | May   14th | Hash tables; chaining vs probing
 | May   16th | Hash table probing schemes; intro to functional programming: map, reduce, etc.
 | May   21st | Heaps; binary heaps; leftist heaps
+| May   23rd | More heaps; `build_heap()`; `heap_sort()`; binomial heaps
+| May   28th | Graphs; breadth first search; depth first search
 
 
 [piazza]: https://piazza.com/ucsb/spring2024/cs24
