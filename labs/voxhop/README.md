@@ -63,7 +63,11 @@ Keep processing pairs of points until you reach the end of the input. You should
 print exactly one line of output for every pair of points in the input.
 
 
-## Other Stuff
+## Coordinates
+
+The coordinate system is zero-indexed,  like C++ arrays.  The voxel at (0, 0, 0)
+is in the lowest tier  at the northwest corner of the map.  This table lists the
+terms used to refer to each axis, and how they fit together.
 
 | Coordinate | Dimension | Axis (0-N)  |
 |------------|-----------|-------------|
