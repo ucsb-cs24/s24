@@ -24,7 +24,7 @@ class VoxMap {
   }
 
   update(text) {
-    const lines = text.split('\n')
+    const lines = text.split(/\r?\n/)
     const dims  = lines[0].split(/\s+/)
     if(dims.length !== 3) {
       throw Error('Expected three dimensions.')
