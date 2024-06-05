@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>VoxHop Map Viewer</title>
+    <link rel="stylesheet" href="index.css" type="text/css" />
+    <script src="gl-matrix-min.js" defer></script>
+    <script src="voxmap.js" defer></script>
+    <!-- <script src="cube.js" defer></script> -->
+    <script src="octahedron.js" defer></script>
+    <script src="path.js" defer></script>
+    <script src="slices.js" defer></script>
+    <script src="index.js" defer></script>
+  </head>
+
+  <body>
+    <div id="viewport">
+      <canvas id="glcanvas"></canvas>
+    </div>
+
+    <div id="controls">
+      <div class="section">
+        <fieldset>
+          <legend>Map File</legend>
+          <input  id="upload" type="file" />
+        </fieldset>
+        <fieldset>
+          <legend>Legend</legend>
+          <span class="legend" style="background-color: rgb(100%, 100%,  90%);" title="North Face">N</span>
+          <span class="legend" style="background-color: rgb( 90%, 100%, 100%);" title="East Face">E</span>
+          <span class="legend" style="background-color: rgb( 90%,  90%, 100%);" title="South Face">S</span>
+          <span class="legend" style="background-color: rgb(100%,  90%,  90%);" title="West Face">W</span>
+          <span class="legend" style="background-color: rgb( 90%, 100%,  90%);" title="Top Face">T</span>
+          <span class="legend" style="background-color: rgb(100%,  90%, 100%);" title="Bottom Face">B</span>
+        </fieldset>
+      </div>
+      <div class="section">
+        <fieldset class="marker point">
+          <legend>Source <span class="ball" style="background-color:#00f"></span></legend>
+          <div>
+            <input name="x" type="number" placeholder="X" />
+            <input name="y" type="number" placeholder="Y" />
+            <input name="z" type="number" placeholder="Z" />
+          </div>
+        </fieldset>
+        <fieldset class="marker point">
+          <legend>Destination <span class="ball" style="background-color:#f00"></span></legend>
+          <div>
+            <input name="x" type="number" placeholder="X" />
+            <input name="y" type="number" placeholder="Y" />
+            <input name="z" type="number" placeholder="Z" />
+          </div>
+        </fieldset>
+        <fieldset class="marker point">
+          <legend>Extra <span class="ball" style="background-color:#080"></span></legend>
+          <div>
+            <input name="x" type="number" placeholder="X" />
+            <input name="y" type="number" placeholder="Y" />
+            <input name="z" type="number" placeholder="Z" />
+          </div>
+        </fieldset>
+      </div>
+      <div class="section">
+        <fieldset class="clip point">
+          <legend>Min Clip</span></legend>
+          <div>
+            <input name="x" type="number" min="0" placeholder="X" />
+            <input name="y" type="number" min="0" placeholder="Y" />
+            <input name="z" type="number" min="0" placeholder="Z" />
+          </div>
+        </fieldset>
+        <fieldset class="clip point">
+          <legend>Max Clip</span></legend>
+          <div>
+            <input name="x" type="number" min="0" placeholder="X" />
+            <input name="y" type="number" min="0" placeholder="Y" />
+            <input name="z" type="number" min="0" placeholder="Z" />
+          </div>
+        </fieldset>
+      </div>
+    </div>
+
+    <div id="footer">
+      <input id="path" placeholder="Enter source voxel and a path to visualize..." />
+      <span id="path-message">???</span>
+    </div>
+  </body>
+</html>

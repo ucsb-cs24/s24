@@ -55,7 +55,9 @@ _17:00 to 18:15 on Tuesdays and Thursdays in TD-W 1701_
 | May   21st | Heaps; binary heaps; leftist heaps
 | May   23rd | More heaps; `build_heap()`; `heap_sort()`; binomial heaps
 | May   28th | Graphs; breadth first search; depth first search
-
+| May   30th | Data structures and big-O runtimes for DFS and BFS
+| June   4th | Minimum spanning trees; Prim's and Kruskal's algorithms
+| June   6th | Weighted shortest path; Dijkstra's algorithm
 
 [piazza]: https://piazza.com/ucsb/spring2024/cs24
 [class-links]: https://piazza.com/class/lug49t2pdob1ub/post/6

@@ -143,11 +143,13 @@ the `-O3` flag.
 
 ## Hints
 
-<!-- - First make it work.  Then make it fast. -->
-- For now, just make it work!  Performance tests are coming soon.
+- Make it work first.  Make it fast later.
+- The Invalid Point tests use the `pyramid.vox` test file.
 - Your program  will never be given an invalid map file.  It can still be useful
   to add error checks to your parser, though - it'll help catch parsing bugs.
 - You don't need to find  the shortest route,  but finding short routes can help
   your program run faster.
-<!-- - The performance tests make many queries per map,  -->
-
+- The performance tests make one thousand queries per map.  If you can move some
+  work from your route finding function  to your map reading function,  it could
+  save you a lot of time.
+- <https://xkcd.com/2407/>
