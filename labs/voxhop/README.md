@@ -152,6 +152,7 @@ a summary of your program.  In your report:
 - Explain how you represent the world map in memory.
 - Describe the algorithm you use to perform route queries.
 - List the data structures you use, and explain how you chose them.
+- Give the big-O runtime of each step, and the runtime in total.
 
 If you want to keep optimizing your program after you  write the report, include
 a link  to the Gradescope submission  that you're describing  at the top of your
