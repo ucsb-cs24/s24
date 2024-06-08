@@ -146,7 +146,7 @@ the `-O3` flag.
 
 Once your program passes the performance tests,  write a short report explaining
 how it works.  Create a plain text file called `WRITEUP.txt` (or `WRITEUP.md` if
-you prefer using [Markdown][md]) inside the `voxmap` folder.  In this file, give
+you prefer using [Markdown][md]) inside the `voxhop` folder.  In this file, give
 a summary of your program.  In your report:
 
 - Explain how you represent the world map in memory.
