@@ -1,5 +1,5 @@
 # Profiling with GProf
-
+ 
 > Premature optimization is the root of all evil.
 
 Thus spake Donald Knuth, and he's right, as usual.  Programmers spend a lot of
