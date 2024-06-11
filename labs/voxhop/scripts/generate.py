@@ -55,7 +55,7 @@ def main():
         raise Unreachable()
 
     # https://stackoverflow.com/a/52372390
-    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stdout.reconfigure(encoding='utf-8', newline='\n')
     voxmap.write(sys.stdout)
 
 if __name__ == '__main__':

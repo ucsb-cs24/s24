@@ -115,7 +115,7 @@ The maps your program will read  are stored as ASCII text.  Each map file starts
 with a line  containing three positive integers  separated by whitespace.  These
 are, in order: the width of the map, the depth of the map, and the height of the
 map. The width is the east-west axis, and the depth is the north-south axis. All
-coordinates will be  between 1 and 30000 (inclusive),  and the width will always
+dimensions will be  between 1 and 30000  (inclusive),  and the width will always
 be a multiple of four.
 
 The rest of the file contains a series of "tiers."  Each tier represents a slice
